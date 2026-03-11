@@ -97,6 +97,31 @@
 
 ---
 
+
+## 3-1. 신규 저장소 생성(처음부터 시작) 빠른 가이드
+
+"아직 GitHub 저장소도 없고, 로컬 폴더만 있는 경우"를 위한 가장 쉬운 순서입니다.
+
+### 사전 준비
+1. GitHub에서 새 빈 저장소를 만듭니다. (README/License 없이 생성하면 충돌 가능성이 줄어듭니다)
+2. 생성 후 원격 URL을 복사합니다. (HTTPS 예: `https://github.com/<user>/<repo>.git`)
+
+### Git_Helper에서 진행
+1. **초기 설정 탭** → `Browse`로 프로젝트 폴더 선택
+2. `Init Repo` 클릭 (로컬에 `.git` 생성)
+3. `Remote URL`에 복사한 GitHub URL 붙여넣기
+4. `Set Remote` 클릭 (`origin` 자동 등록/갱신)
+5. `Refresh Info` 클릭 후
+   - Current Branch: `main` 또는 `master` 확인
+   - Remote URL: 입력한 URL 확인
+6. **기본 Git 작업 탭**으로 이동
+7. `Add All` 클릭
+8. Commit Message 입력 (예: `Initial commit`)
+9. `First Upload` 클릭 (최초 업로드 자동 처리)
+10. **로그 탭**에서 성공 여부 확인 후 GitHub 페이지에서 커밋 반영 확인
+
+> 팁: `First Upload`는 `git push -u origin <branch>`를 실행해 이후 일반 `Push`가 쉽게 동작하도록 도와줍니다.
+
 ## 4. 유효성 검사 / 안전장치
 
 앱은 아래 상황에서 동작을 막고 안내 메시지를 표시합니다.
