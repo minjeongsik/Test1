@@ -18,11 +18,11 @@ public class MainForm : Form
         Font = new Font("Consolas", 10)
     };
 
-    private readonly Button _statusButton = new() { Text = "Status", Width = 90 };
-    private readonly Button _addAllButton = new() { Text = "Add All", Width = 90 };
-    private readonly Button _commitButton = new() { Text = "Commit", Width = 90 };
-    private readonly Button _pushButton = new() { Text = "Push", Width = 90 };
-    private readonly Button _pullButton = new() { Text = "Pull", Width = 90 };
+    private readonly Button _statusButton = new() { Text = "Status", Width = 90, Height = 50 };
+    private readonly Button _addAllButton = new() { Text = "Add All", Width = 90, Height = 50 };
+    private readonly Button _commitButton = new() { Text = "Commit", Width = 90, Height = 50 };
+    private readonly Button _pushButton = new() { Text = "Push", Width = 90, Height = 50 };
+    private readonly Button _pullButton = new() { Text = "Pull", Width = 90, Height = 50 };
 
     public MainForm()
     {
@@ -47,7 +47,7 @@ public class MainForm : Form
         };
 
         var pathPanel = new FlowLayoutPanel { AutoSize = true, WrapContents = false };
-        var browseButton = new Button { Text = "Browse", Width = 90 };
+        var browseButton = new Button { Text = "Browse", Width = 90, Height = 30 };
 
         pathPanel.Controls.Add(new Label { Text = "Repository Path:", AutoSize = true, Padding = new Padding(0, 7, 0, 0) });
         pathPanel.Controls.Add(_repositoryPathTextBox);
