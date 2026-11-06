@@ -1,4 +1,4 @@
-name: TapStream personal Android APK
+name: TapStream personal Android APK v0.2
 on:
   push:
     branches: [main]
@@ -23,6 +23,10 @@ jobs:
           echo "cf04218fb532931d7eb968c29f02b42be3c9d0b79f09228121b69612946c333a  source.tar.gz" | sha256sum -c
           tar -xzf source.tar.gz
           rm source.tar.gz
+      - name: Apply TapStream session continuity patch
+        run: |
+          base64 -d .github/tapstream-v02-patch.py.gz.b64 | gzip -d > patch_v02.py
+          python3 patch_v02.py
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -48,7 +52,7 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: TapStream-APK
+          name: TapStream-v0.2-APK
           path: tapstream-app/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
