@@ -1,0 +1,50 @@
+name: TapStream personal Android APK
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/tapstream-personal-apk.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Restore TapStream source
+        env:
+          TAPSTREAM_GZIP_B64: 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
+        run: |
+          mkdir -p tapstream-app
+          cd tapstream-app
+          printf '%s' "$TAPSTREAM_GZIP_B64" | base64 --decode > source.tar.gz
+          echo "cf04218fb532931d7eb968c29f02b42be3c9d0b79f09228121b69612946c333a  source.tar.gz" | sha256sum -c
+          tar -xzf source.tar.gz
+          rm source.tar.gz
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Install SDK
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.11.1'
+      - name: Check seek tests
+        run: node tapstream-app/tests/seek.test.js
+      - name: Build debug APK
+        working-directory: tapstream-app
+        run: gradle --no-daemon --stacktrace :app:assembleDebug
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: TapStream-APK
+          path: tapstream-app/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
